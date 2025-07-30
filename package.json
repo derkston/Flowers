@@ -1,9 +1,9 @@
 {
-  "name": "packege",
+  "name": "package",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://derkston.github.io/Flowers/",
+  "homepage": "https://derkston.github.io/Flowers",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
