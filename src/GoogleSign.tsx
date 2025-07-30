@@ -26,7 +26,7 @@ export const GoogleSign = () => {
       console.log( user);
       alert(`Добро пожаловать, ${user.displayName || user.email}!`);
       // Здесь вы можете добавить логику для перенаправления пользователя
-    } catch (error) {
+    } catch (error : any) {
       // Обработка ошибок входа через Google
       console.error('Ошибка входа через Google:', error.code, error.message);
 

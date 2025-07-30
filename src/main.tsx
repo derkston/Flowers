@@ -18,7 +18,7 @@ const app = initializeApp({
 export const auth = getAuth(app)
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
     </BrowserRouter>
   </StrictMode>,
