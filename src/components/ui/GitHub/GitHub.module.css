@@ -1,0 +1,14 @@
+.github {
+	display: flex;
+	align-items: center;
+	border: none;
+	gap: 10px;
+	padding: 0;
+	background: none;
+	color: white;
+}
+.github svg {
+	width: 30px;
+	height: 30px;
+	fill : white;
+}

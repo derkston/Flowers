@@ -1,0 +1,74 @@
+.account {
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 3rem 0;
+}
+.account fieldset {
+	width: 100%;
+	max-width: 50%;
+	margin: 0 auto;
+	font-family: 'Roboto';
+  line-height: 150%;
+  font-weight: 400;
+  font-size: 16px;
+  color:  white;
+	background: var(--Primary);
+	border: 2px solid var(--Body) ;
+	border-radius: 10px;
+	padding: 2rem;
+}
+legend{
+	text-transform: uppercase;
+	font-size: 24px;
+	color: white;
+}
+.form_title {
+	text-align: center;
+	color: white;
+	margin-bottom: 1rem;
+}
+.input__wrapper {
+	display: flex;
+	flex-direction: column;
+	margin: 1rem 0;
+}
+.input__wrapper label {
+	font-size: 18px;
+	font-weight: 500;
+	color: white;
+	padding-left: .7rem;
+}
+.input__wrapper input {
+	padding: .9rem .7rem;
+	border-radius: 10px;
+	outline: none;
+	font-size: 18px;
+	font-weight: 400;
+	color: var(--HeaderText);
+	border: none;
+	transition: all .5s ease-in;
+	border: 2px solid var(--Body);
+}
+.form button {
+	border-radius: 10px;
+	background: white;
+	color: var(--HeaderText);
+}
+.form button:hover {
+	color: white;
+	background: var(--HeaderText);
+}
+.fieldset_auth {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+@media (width < 787px) {
+	.account {
+		padding: 1rem;
+	}
+	.account fieldset {
+		padding: 1rem;
+	}
+}

@@ -1,4 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router'
+import { Post } from '../components/Post/Post'
+import { AllPosts } from '../pages/AllPosts/AllPosts'
+import { Home } from '../pages/Home/Home'
 import { PUBLIC_URL } from './URL'
 
 
@@ -7,9 +10,13 @@ import { PUBLIC_URL } from './URL'
 
 export const AppRoutes = () => {
 	return <Routes>
+		<Route path='/' index element={<Home/>}/>
 		{PUBLIC_URL.map(e => {
-			return <Route path={e.path} element={<e.component/>}/>
+			return <Route path={e.path}  element={<e.component/>}/>
 		})}
+		<Route path='/posts' element={<AllPosts/>}/>
+		<Route path='/posts/:id' element={<Post/>}/>
+		
 		<Route path='/*' element={<Navigate to='/'/>}/>
 	</Routes>
 }

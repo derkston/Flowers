@@ -1,0 +1,75 @@
+.discover {
+	padding: 3rem;
+	margin-top: 6rem;
+	background-color: var(--HeaderText);
+	color : #fff;
+	position: relative;
+}
+.discover::before {
+	content: url('img/icon/plant.svg');
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-55%);
+	
+}
+.discover h2 {
+	color: #fff;
+}
+.discover__wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.discover__wrapper img:nth-child(2){
+	width: 100%;
+	margin-top: 5rem;
+}
+.discover__content {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.discover__content img {
+	width: 100%;
+	max-width: 100%;
+	object-fit: cover;
+}
+.discover__text {
+	width: 100%;
+	max-width: 40%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+@media (width < 1200px) {
+	.discover__text {
+			max-width: 60%;
+	}
+	.discover__content img {
+		max-width: 40%;
+	}
+}
+@media (width < 768px) {
+	.discover__wrapper {
+		flex-direction: column-reverse;
+		gap: 1rem;
+	}
+	.discover__content {
+		flex-direction: column;
+	}
+	.discover__content img {
+		max-width: 100%;
+	}
+	.discover__text {
+		max-width: 100%;
+		margin-top: 2rem;
+	}
+}
+@media (width < 768px) {
+	.discover {
+		padding: 1rem;
+	}
+}

@@ -1,9 +1,13 @@
+import { BrowserRouter } from 'react-router'
 import { AppRoutes } from './AppRoutes/AppRoutes'
-import { NavBar } from './components/ui/NavBar/NavBar'
+import { Footer } from './components/Footer/Footer'
+import { Header } from './components/Header/Header'
 
 export const App = () => {
-	return <>
-		<NavBar/>
+	return <BrowserRouter  >
+		<Header/>
 		<AppRoutes/>
-	</>
+		<Footer/>
+	</BrowserRouter>
+	
 }

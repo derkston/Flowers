@@ -1,5 +1,11 @@
-import { BASE_URL } from '../../main'
+import { Discover } from '../../components/sections/Discover/Discover'
+import { News } from '../../components/sections/News/News'
+import { Preview } from '../../components/sections/Preview/Preview'
 
 export const Home = () => {
-	return <img src= { BASE_URL + 'src/assets/img/Rectangle 24.png'}alt="" />
+	return <main>
+		<Preview/>
+		<Discover/>
+		<News/>
+	</main>
 }

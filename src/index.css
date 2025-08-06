@@ -3,27 +3,36 @@
   --HeaderText : #343D33;
   --Body : #414840;
 }
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+img {
+  width: 100%;
+  max-width: 100%;
+}
 body {
+  min-height: 100%;
   font-family: 'Roboto';
   line-height: 150%;
   font-weight: 400;
   font-size: 16px;
   color: var(--Body) ;
-  background-color: black;
+  background-color: white;
 }
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
+
 h1 {
   font-family: 'Libre Baskerville';
-  font-weight: 400;
+  font-weight: 700;
   font-size: 57px;
   line-height: 110%;
   color: var(--HeaderText);
@@ -46,18 +55,19 @@ h4{
   font-family: 'Libre Baskerville';
   font-weight: 400;
   font-size: 23px;
-  line-height: 110%;
+
   color: var(--Primary);
 }
 button , a {
   font-family: 'Roboto';
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 100%;
-  letter-spacing: 15%;
-  padding: 20px 40px;
+  letter-spacing: 0.15rem;
+  padding: 1rem 2rem;
   transition: all 0.5s ease;
   cursor: pointer;
+  white-space: nowrap;
 }
 button {
   color: white;
@@ -68,26 +78,52 @@ button:hover {
   background-color: #547552;
 }
 a {
+  text-decoration: none;
   background-color: #fff;
   color: var(--Primary);
-  border: 3px solid var(--Primary);
+  border: 2px solid var(--Primary);
 }
 a:hover {
   color: #547552;
   border-color: #547552;
 }
+.social_icon {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+
+
+@media (width < 1200px) {
+  h1 {
+    font-size: 42px;
+  }
+  h2 {
+    font-size: 24px;
+  }
+  body {
+    font-size: 18px;
+  }
+}
 @media (width < 768px) {
   body {
       font-weight: 300;
-      font-size: 22px;
+      font-size: 16px;
   }
   button , a {
     padding: 15px 30px;
   }
+  
 }
 @media (width < 550px) {
-  body {
-    font-size: 20px;
+  
+  h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+  h2 {
+    font-size: 21px;
+    text-align: center;
   }
   button , a {
     padding: 10px 20px;

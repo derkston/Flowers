@@ -2,10 +2,9 @@ import { initializeApp } from "firebase/app"
 import { getAuth } from 'firebase/auth'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router'
 import { App } from './App.tsx'
 import './index.css'
-export const BASE_URL = import.meta.env.BASE_URL
+
 const app = initializeApp({
   apiKey: "AIzaSyAo518IvIf7IIy7rERtZwv8aOSbUEx6T44",
   authDomain: "flowers-1dbfb.firebaseapp.com",
@@ -17,9 +16,7 @@ const app = initializeApp({
 });
 export const auth = getAuth(app)
 createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <BrowserRouter>
+   <StrictMode>
       <App />
-    </BrowserRouter>
-  </StrictMode>,
+  </StrictMode>
 )

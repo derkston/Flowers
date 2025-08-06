@@ -1,0 +1,14 @@
+.telegram {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	border: none;
+	padding: 0;
+	background: none;
+	color: white;
+}
+.telegram svg {
+	width: 30px;
+	height: 30px;
+		fill : white;
+}
