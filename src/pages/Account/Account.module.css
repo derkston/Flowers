@@ -46,9 +46,12 @@ legend{
 	font-size: 18px;
 	font-weight: 400;
 	color: var(--HeaderText);
-	border: none;
 	transition: all .5s ease-in;
 	border: 2px solid var(--Body);
+}
+.input__error {
+	padding: 10px;
+	color: white;
 }
 .form button {
 	border-radius: 10px;
