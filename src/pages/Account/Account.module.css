@@ -1,0 +1,24 @@
+.user__wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	gap: 1rem;
+	background-color: var(--Primary);
+	padding: 1rem;
+	border-radius: 0px;
+
+}
+.user__info {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.user__info h3 {
+	color: white;
+}
+.user__photo {
+ width: 60px;
+ height: 60px;
+ border-radius: 50%;
+}

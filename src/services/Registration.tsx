@@ -12,7 +12,7 @@ export const handleForm = async (
     alert('Пользователь зарегистрирован:' + user.email );
   } catch (error) {
 		if (error instanceof Error) {
-			 alert('Ошибка регистрации:' +  error.message);
+			 alert('Ошибка регистрации , возможно такой пользователь уже зарегистрирован');
 		}
   }
 } 

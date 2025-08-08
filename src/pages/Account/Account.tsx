@@ -3,6 +3,7 @@ import { Container } from '../../components/Container/Container'
 import { Loading } from '../../components/ui/Loading/Loading'
 import { useAuth } from '../../hooks/useAuth'
 import { auth } from '../../main'
+import { UserPanel } from '../../services/AdminPanel/UserPanel/UserPanel'
 import style from './Account.module.css'
 export const Account = () => {
 
@@ -15,28 +16,29 @@ export const Account = () => {
 				if (error instanceof Error) {
 			 		alert('Ошибка при выходе:' +  error.message);
 				}
-				
 			}
 	}
-	console.log(user)
-	return <main className={style.account}>
-		<section>
-			{loading && <Loading/>}
-			<Container>
-				{!loading && <div className={style.account__user}>
-						{user &&
-							<>
-								<div className={style.user}>
-										<h2>{user.displayName}</h2>
-										<p>{user.email}</p>
-										{user.photoURL && <img className={style.user_photo} src={user.photoURL} />}
-								</div>
-								<button onClick={handleLogout}>Выйти</button>
-							</>
-						}
-						{!auth.currentUser && <span>Пользователь не авторизован</span> }		
-				</div>}
-			</Container>
-		</section>
-	</main>
+	return <>
+		{loading && <Loading/>}
+		{!loading && user && 	<main className={style.account}>
+					<section className={style.user__header}>
+						<Container>
+							<div className={style.user__wrapper}>
+									<div className={style.user__info}>
+										<h3 className={style.user__name}>{user.displayName}</h3>
+										{user.photoURL &&
+										<img 
+										className={style.user__photo}
+										src={user.photoURL}
+										/>}
+									</div>
+									<button onClick={handleLogout}>Выйти</button>
+							</div>
+						</Container>
+					</section>
+				<UserPanel/>
+			</main>
+		}
+		{!user && <h2 style={{textAlign : 'center' , margin : 'auto 0'}}>Пользователь не авторизован</h2>}
+	</>
 }

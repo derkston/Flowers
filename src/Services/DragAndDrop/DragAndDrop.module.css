@@ -1,0 +1,13 @@
+.drop__area {
+	width: 100%;
+	height: 300px;
+	padding: 1rem;
+	border: 1px solid  var(--HeaderText);
+	border-radius: 10px;
+	background-color: white;
+	color: var(--HeaderText);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

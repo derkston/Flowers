@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router'
-import { PUBLIC_URL } from '../../../AppRoutes/URL'
+import { PUBLIC_URL } from '../../../Routes/AppRoutes/URL'
 import style from './NavBar.module.css'
 export const NavBar = () => {
 	const [isBurger , setIsBurger] = useState(false);
