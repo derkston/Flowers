@@ -1,0 +1,12 @@
+.admin_panel {
+	display: flex;
+	gap: 2rem;
+}
+.admin_nav {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.active {
+	background-color: #547554;
+}

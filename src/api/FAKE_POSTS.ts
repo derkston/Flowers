@@ -3,6 +3,7 @@ import type { TAllPost } from '../Types/post.type'
 export const FAKE__POSTS : TAllPost = [
   {
     "id": 1,
+    "author" : 'Aby', 
     "title": "Как ухаживать за монстерой в домашних условиях",
     "date": "2023-05-15",
     "image": 'img/posts/blog0.jpg',
@@ -11,6 +12,7 @@ export const FAKE__POSTS : TAllPost = [
   },
   {
     "id": 2,
+    "author" : 'Aby', 
     "title": "10 самых неприхотливых комнатных растений",
     "date": "2023-06-22",
     "image": "img/posts/blog2.jpg",
@@ -19,6 +21,7 @@ export const FAKE__POSTS : TAllPost = [
   },
   {
     "id": 3,
+    "author" : 'Aby', 
     "title": "Почему желтеют листья у фикуса?",
     "date": "2023-07-10",
     "image": 'img/posts/blog3.jpg',
@@ -27,6 +30,7 @@ export const FAKE__POSTS : TAllPost = [
   },
   {
     "id": 4,
+    "author" : 'Aby', 
     "title": "Цветущие суккуленты: ТОП-5 видов",
     "date": "2023-08-05",
     "image": 'img/posts/blog1.jpg',
@@ -35,6 +39,7 @@ export const FAKE__POSTS : TAllPost = [
   },
   {
     "id": 5,
+    "author" : 'Aby', 
     "title": "Как вырастить авокадо из косточки",
     "date": "2023-09-18",
     "image": 'img/posts/blog2.jpg',

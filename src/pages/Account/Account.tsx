@@ -1,23 +1,16 @@
-import { signOut } from 'firebase/auth'
+import { useState } from 'react'
 import { Container } from '../../components/Container/Container'
 import { Loading } from '../../components/ui/Loading/Loading'
+import { UserNav } from '../../Components/ui/UserNav/UserNav'
 import { useAuth } from '../../hooks/useAuth'
-import { auth } from '../../main'
-import { UserPanel } from '../../services/AdminPanel/UserPanel/UserPanel'
+import { AdminPanel } from '../../Services/AdminPanel/AdminPanel'
+import { Basket } from '../../Services/Basket/Basket'
+import { handleLogout } from '../../Services/handleLogOut'
 import style from './Account.module.css'
 export const Account = () => {
-
+	const [userContent , setUserContent] = useState<'basket' | 'adminPanel'>('adminPanel')
 	const {user , loading } = useAuth();
-  	const handleLogout = async () => {
-			try {
-				await signOut(auth);
-				console.log('Пользователь успешно вышел из аккаунта!');
-			} catch (error) {
-				if (error instanceof Error) {
-			 		alert('Ошибка при выходе:' +  error.message);
-				}
-			}
-	}
+  	
 	return <>
 		{loading && <Loading/>}
 		{!loading && user && 	<main className={style.account}>
@@ -32,13 +25,23 @@ export const Account = () => {
 										src={user.photoURL}
 										/>}
 									</div>
+									<UserNav userContent={userContent} setUserContent={setUserContent}/>
 									<button onClick={handleLogout}>Выйти</button>
 							</div>
 						</Container>
 					</section>
-				<UserPanel/>
+					<section className={style.user__main}>
+						<Container>
+							<div className={style.user__main_wrapper}>
+									{
+										userContent == 'basket' ? <Basket/> :  
+										userContent == 'adminPanel' ? <AdminPanel/> 
+										: <span>Произошла ошибка , пожалуйста перезайдите</span>
+									}
+							</div>
+						</Container>
+					</section>
 			</main>
 		}
-		{!user && <h2 style={{textAlign : 'center' , margin : 'auto 0'}}>Пользователь не авторизован</h2>}
 	</>
 }

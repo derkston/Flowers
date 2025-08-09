@@ -16,7 +16,7 @@ export const AppRoutes = () => {
 			return <Route path={e.path}  element={<e.component/>}/>
 		})}
 		<Route path='/posts' element={<AllPosts/>}/>
-		<Route path='/posts/:id' element={<Post/>}/>
+		<Route path='/posts/:id' element={<Post routePost={true}/>}/>
 		
 		<Route path='/*' element={<Navigate to='/'/>}/>
 	</Routes>

@@ -22,3 +22,9 @@
  height: 60px;
  border-radius: 50%;
 }
+.user__main {
+	margin-top: 3rem;
+}
+.user__main_wrapper {
+	display: flex;
+}
