@@ -4,12 +4,12 @@ import { useParamsPost } from '../../Hooks/useParamsPost'
 import type { FC } from 'react'
 import type { IPost } from '../../Types/types'
 import style from './Post.module.css'
-export const Post : FC<{post : IPost}> = ({post}) => {
+export const Post : FC<{post? : IPost}> = ({post}) => {
 	const {ParamsPost , PostParamsID} = useParamsPost();
 		// Сперва проверяем на ID в URL , чтобы понять где мы (либо на странице AllPosts , либо на конкретном посте)
-	 return PostParamsID == undefined ? (
+	 return PostParamsID == undefined && post ? (
 					<article className={style.post}>
-						<img src={'../' + post.image} alt={post.title}  />
+						{post.image && <img src={'../' + post.image} alt={post.title}  />}
 						<div className={style.post__text}>
 							<h2>{post.title}</h2>
 							<p className={style.short_description}>

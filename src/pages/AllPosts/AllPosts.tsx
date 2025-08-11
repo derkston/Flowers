@@ -1,4 +1,3 @@
-import { type FC } from 'react'
 import { Container } from '../../components/Container/Container'
 import { Post } from '../../components/Post/Post'
 import { Loading } from '../../components/ui/Loading/Loading'
@@ -6,7 +5,7 @@ import { useAllPost } from '../../Hooks/useAllPost'
 import type { IPost } from '../../Types/types'
 import style from './AllPosts.module.css'
 
-export const AllPosts : FC = () => {
+export const AllPosts  = () => {
 	const {posts , loading , error} = useAllPost();
   if (loading) {
     return <Loading/>

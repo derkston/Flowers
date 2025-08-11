@@ -1,9 +1,16 @@
 import { Link, NavLink } from 'react-router'
-import { FAKE__POSTS } from '../../../api/FAKE_POSTS'
-import type { IPost } from '../../../Types/post.type'
+import { useAllPost } from '../../../Hooks/useAllPost'
 import { Container } from '../../Container/Container'
+import { Loading } from '../../ui/Loading/Loading'
 import style from './News.module.css'
 export const News = () => {
+	const {posts , loading , error} = useAllPost();
+	if(loading){
+		return <Loading/>
+	}
+	if(error){
+		return <div>Произошла ошибка </div>
+	}
 	return <section>
 		<Container>
 			<div className={style.news__wrapper}>
@@ -12,16 +19,17 @@ export const News = () => {
 						<Link to='/posts'>Все посты</Link>
 					</div>
 					<div className={style.news__posts}>
-							{FAKE__POSTS.slice(0 , 4).map((e : IPost) => {
+							{posts.slice(0 , 4).map(post => {
 								return (
-									<article className={style.news_post} key={e.id}>
-										<img src={e.image} />
+									<article className={style.news_post} key={post.id}>
+										{post.image && <img src={post.image} />}
 										<div className={style.news_post__text}>
-											<h4>{e.title}</h4>
-											<p>{e.short_description}</p>
+											<h4>{post.title}</h4>
+											<p>{post.short_description}</p>
 											<div className={style.news_posts__info}>
-												<span>{e.date}</span>
-												<NavLink to={`/posts/` + e.id}>Подробнее</NavLink>
+												<span>{post.date}</span>
+												<span>{post.author}</span>
+												<NavLink to={`/posts/` + post.id}>Подробнее</NavLink>
 											</div>
 										</div>
 								</article>

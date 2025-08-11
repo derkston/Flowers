@@ -1,8 +1,13 @@
 import type { User } from 'firebase/auth'
-import type { Dispatch, SetStateAction } from 'react'
-
+import type { Dispatch, JSX, SetStateAction } from 'react'
+export interface IURL {
+	path: string;
+  component: () => JSX.Element;
+  element_name: string;
+}
 export interface IProduct  {
-	id : number ,
+	id? : string ,
+	UID : string,
 	author : string,
 	title : string,
 	short_description : string , 
@@ -10,12 +15,13 @@ export interface IProduct  {
 	quantity : number ,
 	price : number ,
 }
-export interface AuthContextType {
+export interface IAuthContextType {
   user: User | null;
   loading: boolean; 
 }
 export interface IPost {
-	id : string,
+	id? : string ,
+	UID : string,
 	author : string ,
 	title : string,
 	date : string,
@@ -28,12 +34,12 @@ export type TAllPost = Array<IPost>
 export interface IDragAndDropProps {
   setPreviewImages: Dispatch<SetStateAction<string[]>>;
 }
-export type CreateContent = 'CreatePost' | 'CreateProduct'	;
-export type PreviewContent =  'UserPosts'| 'UserProducts' ;
-export type TAdminContent = PreviewContent | CreateContent;
+export type TCreateContent = 'CreatePost' | 'CreateProduct'	;
+export type TPreviewContent =  'UserPosts'| 'UserProducts' ;
+export type TAdminContent = TPreviewContent | TCreateContent;
 
 export interface ICreateFormProps {
-	activeForm : CreateContent ,
+	activeForm : TCreateContent ,
 	setProduct?: React.Dispatch<React.SetStateAction<IProduct | undefined>>;
   setPost?: React.Dispatch<React.SetStateAction<IPost | undefined >>; 
 }

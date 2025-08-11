@@ -25,7 +25,7 @@ export function useAllPost(){
         setPosts([]); // Если данных нет, очищаем список
         setLoading(false);
       }
-    }, (err) => { // Обработка ошибок
+    }, (err) => { 
       console.error("Ошибка при чтении постов:", err);
       setError("Не удалось загрузить посты.");
       setLoading(false);

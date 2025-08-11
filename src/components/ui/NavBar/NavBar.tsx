@@ -11,7 +11,6 @@ export const NavBar = () => {
 		{PUBLIC_URL.map(e => {
 			return <NavLink key={e.path} to={e.path}>{e.element_name}</NavLink>
 		})}
-		<NavLink to='/posts'>Все посты</NavLink>
 	</nav> 
 	{/* Tablet && Mobile nav */}
 	<div   className={ style.burger_nav}>
@@ -29,7 +28,6 @@ export const NavBar = () => {
 		{PUBLIC_URL.map(e => {
 			return <NavLink onClick={handleBurger} key={e.path} to={e.path}>{e.element_name}</NavLink>
 		})}
-		<NavLink onClick={handleBurger}  to='/posts'>Все посты</NavLink>
 	</nav>
 </div>
 	</>

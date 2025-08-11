@@ -5,13 +5,15 @@ import type { ICreateFormProps, IPost, IProduct } from '../../Types/types'
 import style from './CreateForm.module.css'
 export const CreateForm : FC<ICreateFormProps> = ({activeForm ,  setProduct, setPost,} ) => {
 	const {user} = useAuth();
+
 	function handleForm(e: FormEvent) {
     e.preventDefault() 
-		const formValues = e.currentTarget.children ;
+		const formData = new FormData(e.currentTarget as HTMLFormElement);
+		const formValues = Object.fromEntries(formData.entries());
 		// Логика создания товара
     if (activeForm === 'CreateProduct' && setProduct) {
-			let newProduct : IProduct = {
-				id : e.timeStamp,
+			let createdProduct : IProduct = {
+				UID : user.uid,
 				author : user.displayName,
 				title : '',
 				short_description : '' , 
@@ -19,29 +21,25 @@ export const CreateForm : FC<ICreateFormProps> = ({activeForm ,  setProduct, set
 				quantity : 0 ,
 				price : 0 ,
 			};
-			for (let i = 0 ; i < formValues.length - 1 ; i++ ){
-				const inputName = formValues[i].children[1].name;
-				const inputValue = formValues[i].children[1].value;
-				 newProduct = {...newProduct , [inputName] : inputValue}
+			for(const key in formValues){
+				createdProduct = { ...createdProduct , [key] : formValues[key]}
 			}
-       setProduct(newProduct) 
+       setProduct(createdProduct) 
     } else 		// Логика создания поста
 			 if (activeForm === 'CreatePost' && setPost) {
-					let newPost : IPost = {
+					let createdPost : IPost = {
 					author : user.displayName,
+					UID : user.uid,
 					date : new Date().toISOString(),
 					title : '',
 					short_description : '' , 
 					full_description : '' ,
 				};
-				for (let i = 0 ; i < formValues.length - 1 ; i++ ){
-					const inputName = formValues[i].children[1].name;
-					const inputValue = formValues[i].children[1].value;
-					newPost = {...newPost , [inputName] : inputValue}
+				for(const key in formValues){
+				createdPost = {...createdPost , [key] : formValues[key]}
 				}
-				createNewDraftArticle(newPost)
-				setPost(newPost)
-				console.log(newPost)
+				createNewDraftArticle(createdPost)
+				setPost(createdPost)
     }
   }
 	return	(
