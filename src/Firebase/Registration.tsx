@@ -1,5 +1,6 @@
-import { createUserWithEmailAndPassword } from 'firebase/auth'
-import { auth } from '../main'
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from './firebase';
+
 
 export const handleForm = async (
 	email : string,

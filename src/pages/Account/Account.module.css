@@ -23,7 +23,7 @@
  border-radius: 50%;
 }
 .user__main {
-	margin-top: 3rem;
+	margin: 3rem 0;
 }
 .user__main_wrapper {
 	display: flex;

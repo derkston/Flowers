@@ -2,7 +2,8 @@
 import { useState } from 'react';
 
 import { GoogleAuthProvider, signInWithPopup, type AuthError } from 'firebase/auth';
-import { auth } from '../main';
+import { auth } from './firebase';
+
 
 export const GoogleAuth = () => {
   const [errorMessage, setErrorMessage] = useState('');

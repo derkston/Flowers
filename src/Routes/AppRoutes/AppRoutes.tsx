@@ -6,9 +6,6 @@ import type { IURL } from '../../Types/URL.type'
 import { PUBLIC_URL } from './URL'
 
 
-
-
-
 export const AppRoutes = () => {
 	return <Routes>
 		<Route path='/' index element={<Home/>}/>
@@ -16,7 +13,7 @@ export const AppRoutes = () => {
 			return <Route path={e.path}  element={<e.component/>}/>
 		})}
 		<Route path='/posts' element={<AllPosts/>}/>
-		<Route path='/posts/:id' element={<Post routePost={true}/>}/>
+		<Route path='/posts/:id' element={<Post/>}/>
 		
 		<Route path='/*' element={<Navigate to='/'/>}/>
 	</Routes>

@@ -2,6 +2,9 @@
 	display: flex;
 	gap: 2rem;
 }
+.admin_panel h2 {
+	color: white;
+}
 .admin_nav {
 	display: flex;
 	flex-direction: column;

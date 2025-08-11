@@ -2,10 +2,10 @@ import { useState } from 'react'
 import { Container } from '../../components/Container/Container'
 import { Loading } from '../../components/ui/Loading/Loading'
 import { UserNav } from '../../Components/ui/UserNav/UserNav'
+import { handleLogout } from '../../Firebase/handleLogOut'
 import { useAuth } from '../../hooks/useAuth'
 import { AdminPanel } from '../../Services/AdminPanel/AdminPanel'
 import { Basket } from '../../Services/Basket/Basket'
-import { handleLogout } from '../../Services/handleLogOut'
 import style from './Account.module.css'
 export const Account = () => {
 	const [userContent , setUserContent] = useState<'basket' | 'adminPanel'>('adminPanel')

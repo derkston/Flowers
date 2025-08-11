@@ -1,8 +1,8 @@
 import { useState, type ChangeEvent } from 'react'
 import { Container } from '../../components/Container/Container'
 import { Loading } from '../../components/ui/Loading/Loading'
-import { GoogleAuth } from '../../services/GoogleAuth'
-import { handleForm } from '../../services/Registration'
+import { GoogleAuth } from '../../Firebase/GoogleAuth'
+import { handleForm } from '../../Firebase/Registration'
 import style from './Login.module.css'
 
 export const Login = () => {

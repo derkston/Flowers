@@ -15,11 +15,11 @@ export interface AuthContextType {
   loading: boolean; 
 }
 export interface IPost {
-	id : number ,
+	id : string,
 	author : string ,
 	title : string,
 	date : string,
-	image : string,
+	image? : string,
 	short_description : string,
 	full_description : string,
 }

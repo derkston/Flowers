@@ -1,6 +1,7 @@
 import type { User } from 'firebase/auth'
 import { useEffect, useState } from 'react'
-import { auth } from '../main'
+
+import { auth } from '../Firebase/firebase'
 import { AuthContext } from './context'
 
 
