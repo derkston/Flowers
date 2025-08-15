@@ -1,7 +1,8 @@
-import { Post } from '../../../components/Post/Post'
-import { Loading } from '../../../components/ui/Loading/Loading'
-import { useAllPost } from '../../../Hooks/useAllPost'
-import { useAuth } from '../../../hooks/useAuth'
+import { useAllPost } from '../../Hooks/useAllPost'
+import { useAuth } from '../../hooks/useAuth'
+import { Post } from '../Post/Post'
+import { Loading } from '../ui/Loading/Loading'
+
 
 export const UserPosts = () => {
 	const {user} = useAuth();
@@ -13,7 +14,6 @@ export const UserPosts = () => {
 	if(error){
 		return <div>Произошла ошибка</div>
 	}
-	console.log(posts)
 	return <div>
 		{userPosts.map(post => <Post key={post.id} post={post}/>)}
 	</div>

@@ -1,3 +1,6 @@
+.user__header {
+	border-bottom: 1px solid var(--HeaderText);
+}
 .user__wrapper {
 	display: flex;
 	justify-content: space-between;
@@ -22,9 +25,7 @@
  height: 60px;
  border-radius: 50%;
 }
-.user__main {
-	margin: 3rem 0;
-}
+
 .user__main_wrapper {
 	display: flex;
 }

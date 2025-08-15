@@ -1,0 +1,21 @@
+.create_post {
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2 , 1fr);
+	gap: 20px;
+	padding: 1rem;
+	background-color: #547554;
+	color: white;
+	border: 1px solid var(--HeaderText);
+}
+
+.create__form_post {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.input__wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}

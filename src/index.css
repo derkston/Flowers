@@ -92,7 +92,21 @@ a:hover {
   height: 60px;
   cursor: pointer;
 }
-
+input , textarea {
+  outline: none;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--HeaderText);
+  transition: all .5s ease-in;
+}
+input:hover , textarea:hover {
+  box-shadow: 2px 2px  var(--Body);
+}
+input:focus , textarea:focus {
+  box-shadow: inset 2px 2px  var(--Body) ;
+}
 
 @media (width < 1200px) {
   h1 {
